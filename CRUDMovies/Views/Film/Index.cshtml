@@ -1,0 +1,30 @@
+﻿@model IEnumerable<CRUDMovies.Models.Film>
+
+<h2>Lista filmów</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Nazwa</th>
+            <th>Opis</th>
+            <th>Cena</th>
+            <th>Akcje</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var film in Model)
+        {
+            <tr>
+                <td>@film.Name</td>
+                <td>@film.Description</td>
+                <td>@film.Price</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@film.Id">Szczegóły</a> |
+                    <a asp-action="Edit" asp-route-id="@film.Id">Edytuj</a> |
+                    <a asp-action="Delete" asp-route-id="@film.Id">Usuń</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create">Dodaj nowy film</a>

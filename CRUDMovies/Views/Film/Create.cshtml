@@ -1,0 +1,21 @@
+﻿@model CRUDMovies.Models.Film
+
+<h2>Dodaj nowy film</h2>
+
+<form asp-action="Create" method="post">
+    <div>
+        <label for="Name">Nazwa:</label>
+        <input asp-for="Name" />
+    </div>
+    <div>
+        <label for="Description">Opis:</label>
+        <textarea asp-for="Description"></textarea>
+    </div>
+    <div>
+        <label for="Price">Cena:</label>
+        <input asp-for="Price" type="number" />
+    </div>
+    <button type="submit">Dodaj</button>
+</form>
+
+<a asp-action="Index">Powrót do listy</a>
